@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-
-const { index, show } = require('../controllers/skills')
-
-router.get('/', index);
+const skillsController = require('../controllers/skills');
 
 
 
+router.get('/', skillsController.index);
 
-module.exports = {
-    router
+router.get('/:id', skillsController.show);
 
-}
+
+
+
+module.exports = router;
