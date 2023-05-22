@@ -5,10 +5,15 @@
 <ol>
     <% skills.forEach(function(s) { %>
         <li>
+            <form action="/skills/<%= s.id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">DELETE</button>
+            </form>
             <a href="/skills/<%= s.id %>"><%= s.name %></a>
         </li>
     <% }); %>
     
 </ol>
+<a href="/skills/new">Add New Skill</a>
 
 <%- include('../partials/footer') %>
